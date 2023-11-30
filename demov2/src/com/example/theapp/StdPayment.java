@@ -4,7 +4,7 @@ public class StdPayment extends Payment {
     private String currency;
 
     // Constructor
-    public StdPayment(String purchaseName, String item, boolean flag, double price, String currency) {
+    public StdPayment(String purchaseName, String item, boolean flag, int price, String currency) {
         super(purchaseName, item, flag, price);
         this.currency = currency;
     }
@@ -31,10 +31,33 @@ public class StdPayment extends Payment {
 
     // Override the processPay method for standard payments
     @Override
-    public void processPay() {
+    public void processPay(User passedUser) {
         if (flag) {
             System.out.println("Processing payment for " + purchaseName);
-            // Additional processing logic for standard payments
+            if(currency == "Coins"){
+                int userCoins = passedUser.getCoins();
+
+                if (userCoins < price){
+                    System.out.println("Not enough money for " + purchaseName);
+                } else {
+                    userCoins -= price;
+                    passedUser.setCoins(userCoins);
+                    System.out.println("Bought " + purchaseName);
+                }
+
+            } else {
+
+                int userGems = passedUser.getGems();
+
+                if (userGems < price){
+                    System.out.println("Not enough money for " + purchaseName);
+                } else {
+                    userGems -= price;
+                    passedUser.setGems(userGems);
+                    System.out.println("Bought " + purchaseName);
+                }
+
+            }
         } else {
             System.out.println("com.example.theapp.Payment option is disabled for " + purchaseName);
         }

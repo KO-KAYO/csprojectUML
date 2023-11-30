@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.Scene?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.stage.Stage?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml"
-                        fx:controller="com.example.theapp.Controller" prefHeight="600.0" prefWidth="1000.0">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.theapp.Controller">
             <children>
                <ButtonBar layoutX="208.0" layoutY="428.0" prefHeight="40.0" prefWidth="54.0" />
                <ButtonBar layoutX="441.0" layoutY="428.0" prefHeight="40.0" prefWidth="54.0" />
                <ButtonBar layoutX="658.0" layoutY="428.0" prefHeight="40.0" prefWidth="54.0" />
-               <Button fx:id="swordBuy" layoutX="244.0" layoutY="416.0" mnemonicParsing="false" text="Buy" />
-               <Button fx:id="giftBuy" layoutX="482.0" layoutY="416.0" mnemonicParsing="false" text="Buy" />
-               <Button fx:id="shieldBuy" layoutX="694.0" layoutY="416.0" mnemonicParsing="false" text="Buy" />
-               <Label fx:id="usernameText" layoutX="194.0" layoutY="26.0" text="This Is Your com.example.theapp.User" />
+               <Button fx:id="swordBuy" layoutX="244.0" layoutY="416.0" mnemonicParsing="false" onAction="#swordBuy" text="Buy" />
+               <Button fx:id="giftBuy" layoutX="481.0" layoutY="416.0" mnemonicParsing="false" onAction="#giftGet" text="Claim" />
+               <Button fx:id="shieldBuy" layoutX="694.0" layoutY="416.0" mnemonicParsing="false" onAction="#shieldBuy" text="Buy" />
+               <Text fx:id="usernameText" layoutX="194.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This Is Your com.example.theapp.User" />
                <Label layoutX="650.0" layoutY="35.0" text="Coins" />
                <Label layoutX="834.0" layoutY="35.0" text="Gems" />
                <Circle fill="DODGERBLUE" layoutX="87.0" layoutY="44.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
@@ -31,15 +28,18 @@
                <Circle fill="#e3ff1f" layoutX="478.0" layoutY="397.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
                <Text layoutX="496.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Coins!" />
                <Polygon fill="#3b75ab" layoutX="685.0" layoutY="310.0" points="-15.0, 74.0, 15.0, 74.0, 0.0, 100.0" stroke="BLACK" strokeType="INSIDE" />
-               <Button fx:id="leaveThisPlace" layoutX="29.0" layoutY="113.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="117.0" text="Exit" />
+               <Button fx:id="leaveThisPlace" layoutX="29.0" layoutY="113.0" mnemonicParsing="false" onAction="#leaveThisPlace" prefHeight="56.0" prefWidth="117.0" text="Exit" />
                <Text fx:id="responseText" layoutX="457.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Text" />
                <Text layoutX="36.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Swords:" wrappingWidth="102.14453125" />
                <Text layoutX="36.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shields:" wrappingWidth="102.14453125" />
                <Text layoutX="36.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Got Gift?" wrappingWidth="102.14453125" />
-               <Label fx:id="coinCount" layoutX="662.0" layoutY="52.0" text="0" />
-               <Label fx:id="gemCount" layoutX="846.0" layoutY="52.0" text="0" />
-               <Text fx:id="swordsBought" layoutX="84.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-               <Text fx:id="shieldsBought" layoutX="81.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-               <Text fx:id="giftGot" layoutX="86.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" />
+               <Text fx:id="swordsBoughtText" layoutX="84.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+               <Text fx:id="shieldsBoughtText" layoutX="81.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+               <Text fx:id="giftGotText" layoutX="86.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" />
+      <Text fx:id="coinCount" layoutX="650.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="30.0" />
+      <Text fx:id="gemCount" layoutX="834.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="30.0" />
+      <Button fx:id="supportButton" layoutX="823.0" layoutY="273.0" mnemonicParsing="false" onAction="#supportTicketEnable" text="Support" textAlignment="CENTER" />
+      <TextArea fx:id="supportInput" layoutX="240.0" layoutY="178.0" prefHeight="200.0" prefWidth="496.0" promptText="Please enter your issue into this ticket." visible="false" />
+      <Button fx:id="submitTicket" disable="true" layoutX="561.0" layoutY="148.0" mnemonicParsing="false" onAction="#submitTheTicket" text="Submit" visible="false" />
             </children>
 </AnchorPane>

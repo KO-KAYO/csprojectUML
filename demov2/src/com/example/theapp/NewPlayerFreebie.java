@@ -8,10 +8,10 @@ public class NewPlayerFreebie extends Payment {
 
     // Override the processPay method for freebies
     @Override
-    public void processPay() {
-        if (flag) {
+    public void processPay(User passedUser) {
+        if (passedUser.isNewFlag()) {
             System.out.println("Processing freebie for " + purchaseName);
-            // Additional processing logic for freebies
+            passedUser.setNewFlagFalse();
         } else {
             System.out.println("Freebie option is disabled for " + purchaseName);
         }

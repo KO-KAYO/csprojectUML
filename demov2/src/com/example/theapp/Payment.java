@@ -4,10 +4,10 @@ public abstract class Payment {
     protected String purchaseName;
     protected String item;
     protected boolean flag;
-    protected double price;
+    protected int price;
 
     // Constructor
-    public Payment(String purchaseName, String item, boolean flag, double price) {
+    public Payment(String purchaseName, String item, boolean flag, int price) {
         this.purchaseName = purchaseName;
         this.item = item;
         this.flag = flag;
@@ -15,5 +15,5 @@ public abstract class Payment {
     }
 
     // Abstract method to be implemented by subclasses
-    public abstract void processPay();
+    public abstract void processPay(User passedUser);
 }
