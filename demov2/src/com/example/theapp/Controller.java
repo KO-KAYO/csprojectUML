@@ -27,9 +27,10 @@ public class Controller implements Initializable{
 
     // Create instances of the payment classes
     NewPlayerFreebie freebiePayment = new NewPlayerFreebie("New Player Freebie", "Special Item", true);
-    StdPayment swordPayment = new StdPayment("Standard Purchase", "Regular Item", true, 100, "Coins");
-    StdPayment shieldPayment = new StdPayment("Premium Purchase", "Regular Item", true, 20, "Gems");
+    StdPayment swordPayment = new StdPayment("Standard Purchase", "Sword", true, 100, "Coins");
+    StdPayment shieldPayment = new StdPayment("Premium Purchase", "Shield", true, 20, "Gems");
 
+    //initialize the UI elements and test variables
     @FXML
     private Text usernameText;
     @FXML
@@ -63,6 +64,7 @@ public class Controller implements Initializable{
         setGemText();
     }
 
+    //a various library to set and process actions from the user
     @FXML
     private void setUserText() {
         String tempuser = regularUser.getUsername();

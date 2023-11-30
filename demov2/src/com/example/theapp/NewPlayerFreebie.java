@@ -10,10 +10,10 @@ public class NewPlayerFreebie extends Payment {
     @Override
     public void processPay(User passedUser) {
         if (passedUser.isNewFlag()) {
-            System.out.println("Processing freebie for " + purchaseName);
+            //System.out.println("Processing freebie for " + purchaseName);
             passedUser.setNewFlagFalse();
         } else {
-            System.out.println("Freebie option is disabled for " + purchaseName);
+           // System.out.println("Freebie option is disabled for " + purchaseName);
         }
     }
 }
